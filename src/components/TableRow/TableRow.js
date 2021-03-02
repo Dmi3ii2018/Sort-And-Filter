@@ -1,6 +1,6 @@
 import React from "react";
 
-const TableRow = ({ pokemon }) => {
+const TableRow = React.memo(function TableRow({ pokemon }) {
   const { img, name, stats: {attack, defense, hp, speed} } = pokemon;
   return (
       <tr>
@@ -14,6 +14,6 @@ const TableRow = ({ pokemon }) => {
         <td>{speed}</td>
       </tr>
   );
-};
+})
 
 export { TableRow };

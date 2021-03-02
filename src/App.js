@@ -1,8 +1,8 @@
 import React, { useEffect, useCallback, useState } from "react";
 import "./App.css";
 import { usePokemonApi } from "./hooks/data-fetch";
-import { TableRow } from "components";
-import {ReactComponent as FilterIcon} from "./assets/funnel.svg"
+import { TableRow, FilterIcon } from "components";
+// import {ReactComponent as FilterIcon} from "./assets/funnel.svg"
 const SortType = {
   UP: 1,
   DOWN: -1,

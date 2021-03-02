@@ -13,6 +13,7 @@ body {
 }
 
 .table thead th {
+	height: 50px;
 	font-weight: bold;
 	text-align: left;
 	border: none;
@@ -22,6 +23,7 @@ body {
 	border-left: 1px solid #ddd;
 	border-right: 1px solid #ddd;
 	text-align: center;
+	vertical-align: top;
 	position: relative;
 }
 
@@ -71,4 +73,29 @@ body {
 
 .pokemon-name {
 	text-transform: capitalize;
+}
+.active-filter svg {
+	fill: red;
+}
+
+.table thead .filter-form  svg {
+	position: absolute;
+	top: 0;
+    right: 0;
+}
+
+.table thead .filter-form {
+	width: 0;
+	height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+	padding: 0 0 15px 0;
+	transition: width 300ms ease-in-out;
+	border-radius: 4px;
+	border: none;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	overflow: hidden
 }
