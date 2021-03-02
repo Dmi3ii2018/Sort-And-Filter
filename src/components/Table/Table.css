@@ -1,0 +1,101 @@
+body {
+	font-size:14px;
+	padding: 15px 20px;
+}
+.table {
+	width: 100%;
+	border: none;
+	margin-bottom: 20px;
+}
+.table td {
+	text-align: center;
+    vertical-align: middle;
+}
+
+.table thead th {
+	height: 50px;
+	font-weight: bold;
+	text-align: left;
+	border: none;
+	padding: 10px 15px;
+	background: #d8d8d8;
+	font-size: 14px;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	text-align: center;
+	vertical-align: top;
+	position: relative;
+}
+
+.table thead th svg {
+	width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 8px;
+    top: 13px;
+}
+
+.table thead th svg:hover {
+	fill: red;
+}
+.table tbody td {
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	padding: 10px 15px;
+	font-size: 14px;
+}
+.table thead tr th:first-child, .table tbody tr td:first-child {
+	border-left: none;
+}
+.table thead tr th:last-child, .table tbody tr td:last-child {
+	border-right: none;
+}
+.table tbody tr:nth-child(even){
+	background: #f3f3f3;
+}
+
+.table tr,
+.table thead tr th:hover {
+  opacity: 0.8;
+}
+
+.table thead tr {
+  opacity: 1;
+}
+
+.table thead tr th {
+  cursor: pointer;
+}
+
+.table tr:hover {
+  opacity: 1;
+}
+
+.pokemon-name {
+	text-transform: capitalize;
+}
+.active-filter svg {
+	fill: red;
+}
+
+.table thead .filter-form  svg {
+	position: absolute;
+	top: 0;
+    right: 0;
+}
+
+.table thead .filter-form {
+	width: 0;
+	height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+	padding: 0 0 15px 0;
+	transition: width 300ms ease-in-out;
+	border-radius: 4px;
+	border: none;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	overflow: hidden
+}

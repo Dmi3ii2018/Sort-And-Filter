@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ReactComponent as FilterImg } from "assets/funnel.svg";
 import { Transition } from "react-transition-group";
-
+import useDebounce from "hooks/useDebounce"
 const duration = 300;
 
 
@@ -25,11 +25,12 @@ const inputStyle = {
   exited: { width: 0, padding: 0 },
 }
 
-const FilterIcon = () => {
+const FilterIcon = ({ filterHandler, colName }) => {
   const [isFilterVisible, setFilter] = useState(false);
+  const [filterValue, setFilterValue] = useState('')
   const inputEl = useRef();
   const filterEl = useRef();
-
+  const debaunceValue = useDebounce(filterValue, 100); 
   useEffect(() => {
     if (isFilterVisible) {
       inputEl.current.focus();
@@ -42,12 +43,17 @@ const FilterIcon = () => {
     
   };
 
-  const onFilterClick = (evt) => {
+  const onFilterClick = () => {
         setFilter(true);
   };
 
+  const onFilterChange = (evt) => {
+    setFilterValue(evt.target.value);
+    filterHandler(evt)
+  }
+
   return (
-    <div className={isFilterVisible ? "active-filter" : "filter"}>
+    <div className={isFilterVisible || debaunceValue ? "active-filter" : "filter"}>
       <FilterImg ref={filterEl} onClick={onFilterClick} />
       <Transition timeout={500} transitionName="filter" in={isFilterVisible}>
         {(state) => (
@@ -62,7 +68,10 @@ const FilterIcon = () => {
               ...inputDefaulStyle,
               ...inputStyle[state],
             }} ref={inputEl}
+            value={debaunceValue}
             onBlur={onFilterClose}
+            name={colName}
+            onChange={onFilterChange}
             />
           </form>
         )}
