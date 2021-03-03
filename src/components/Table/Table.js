@@ -89,7 +89,7 @@ const Table = ({
                   {filter && (
                     <FilterIcon
                       colName={dataIndex}
-                      filterHandler={filterData(setData, initialValue)}
+                      filterHandler={filterData(data, setData, initialValue)}
                     />
                   )}
                 </th>
