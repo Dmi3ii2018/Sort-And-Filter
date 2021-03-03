@@ -54,11 +54,11 @@ const Pagination = ({
   const renderPagination = useCallback(() => {
     return paginationIndexes.map((page, i) => {
       if (!page) {
-        return <Dots />;
+        return <Dots key={`${page}${i}`} />;
       }
       return (
         <PaginationItem
-          // key={`${page}${i}`}
+          key={`${page}${i}`}
           onPageClick={onPageNumberClick}
           number={page}
           isActive={page === curPage}
