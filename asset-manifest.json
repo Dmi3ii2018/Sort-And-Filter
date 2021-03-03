@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/Dmi3ii2018/Sort-And-Filter/static/css/main.b5e8d905.chunk.css",
-    "main.js": "/Dmi3ii2018/Sort-And-Filter/static/js/main.7c10265e.chunk.js",
-    "main.js.map": "/Dmi3ii2018/Sort-And-Filter/static/js/main.7c10265e.chunk.js.map",
-    "runtime-main.js": "/Dmi3ii2018/Sort-And-Filter/static/js/runtime-main.f592a0a8.js",
-    "runtime-main.js.map": "/Dmi3ii2018/Sort-And-Filter/static/js/runtime-main.f592a0a8.js.map",
-    "static/js/2.f6222317.chunk.js": "/Dmi3ii2018/Sort-And-Filter/static/js/2.f6222317.chunk.js",
-    "static/js/2.f6222317.chunk.js.map": "/Dmi3ii2018/Sort-And-Filter/static/js/2.f6222317.chunk.js.map",
-    "static/js/3.0862f29d.chunk.js": "/Dmi3ii2018/Sort-And-Filter/static/js/3.0862f29d.chunk.js",
-    "static/js/3.0862f29d.chunk.js.map": "/Dmi3ii2018/Sort-And-Filter/static/js/3.0862f29d.chunk.js.map",
-    "index.html": "/Dmi3ii2018/Sort-And-Filter/index.html",
-    "static/css/main.b5e8d905.chunk.css.map": "/Dmi3ii2018/Sort-And-Filter/static/css/main.b5e8d905.chunk.css.map",
-    "static/js/2.f6222317.chunk.js.LICENSE.txt": "/Dmi3ii2018/Sort-And-Filter/static/js/2.f6222317.chunk.js.LICENSE.txt",
-    "static/media/funnel.1eb3e097.svg": "/Dmi3ii2018/Sort-And-Filter/static/media/funnel.1eb3e097.svg"
+    "main.css": "/Sort-And-Filter/static/css/main.b5e8d905.chunk.css",
+    "main.js": "/Sort-And-Filter/static/js/main.7c10265e.chunk.js",
+    "main.js.map": "/Sort-And-Filter/static/js/main.7c10265e.chunk.js.map",
+    "runtime-main.js": "/Sort-And-Filter/static/js/runtime-main.5be3c111.js",
+    "runtime-main.js.map": "/Sort-And-Filter/static/js/runtime-main.5be3c111.js.map",
+    "static/js/2.f6222317.chunk.js": "/Sort-And-Filter/static/js/2.f6222317.chunk.js",
+    "static/js/2.f6222317.chunk.js.map": "/Sort-And-Filter/static/js/2.f6222317.chunk.js.map",
+    "static/js/3.0862f29d.chunk.js": "/Sort-And-Filter/static/js/3.0862f29d.chunk.js",
+    "static/js/3.0862f29d.chunk.js.map": "/Sort-And-Filter/static/js/3.0862f29d.chunk.js.map",
+    "index.html": "/Sort-And-Filter/index.html",
+    "static/css/main.b5e8d905.chunk.css.map": "/Sort-And-Filter/static/css/main.b5e8d905.chunk.css.map",
+    "static/js/2.f6222317.chunk.js.LICENSE.txt": "/Sort-And-Filter/static/js/2.f6222317.chunk.js.LICENSE.txt",
+    "static/media/funnel.1eb3e097.svg": "/Sort-And-Filter/static/media/funnel.1eb3e097.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.f592a0a8.js",
+    "static/js/runtime-main.5be3c111.js",
     "static/js/2.f6222317.chunk.js",
     "static/css/main.b5e8d905.chunk.css",
     "static/js/main.7c10265e.chunk.js"
