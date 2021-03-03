@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const URL = "https://zar.hosthot.ru/api/v1/pokemons/?";
+const URL = "http://zar.hosthot.ru/api/v1/pokemons/?";
 
 const usePokemonApi = (limit = 10, offset = 10) => {
   const [data, setData] = useState({ pokemons: [] });
