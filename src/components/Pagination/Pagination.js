@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, { useMemo, useCallback, useEffect } from "react";
+import { usePagination } from "hooks/usePagination";
 import "./Pagination.css";
 
 const PaginationItem = ({ onPageClick, number, isActive }) => (
   <li onClick={onPageClick}>
-    <button className={isActive ? "active" : ""}>
-      {number}
-    </button>
+    <button className={isActive ? "active" : ""}>{number}</button>
   </li>
 );
 
@@ -15,17 +14,19 @@ const Dots = () => (
   </li>
 );
 
-const Pagination = ({ total, currentPage = 1 }) => {
-  const [curPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(20);
-  const pagLength = useMemo(() => Math.ceil(total / pageSize), [
+const Pagination = ({
+  total,
+  currentPage,
+  children,
+  pageSize,
+  onPageChange,
+}) => {
+  
+  const pagLength = useMemo(() => Math.floor(total / pageSize - 1), [
     pageSize,
     total,
   ]);
-
-  useEffect(() => {
-    setCurrentPage(currentPage);
-  }, [currentPage]);
+  const [curPage, setCurrentPage, paginationIndexes] = usePagination(currentPage, pagLength)
 
   const onNextClick = () => {
     if (pagLength !== curPage) {
@@ -39,50 +40,32 @@ const Pagination = ({ total, currentPage = 1 }) => {
     }
   };
 
-  const onPageNumberClick = (evt) => {
-    setCurrentPage(+evt.target.textContent)
-  };
+  const onPageNumberClick = useCallback(
+    (evt) => {
+      setCurrentPage(+evt.target.textContent);
+    },
+    [setCurrentPage],
+  );
+
+  useEffect(() => {
+    onPageChange(curPage);
+  }, [curPage, onPageChange])
 
   const renderPagination = useCallback(() => {
-    let paginationIndexes;
-    if (curPage < 4) {
-      paginationIndexes = [1, 2, 3, 4, 5, 0, pagLength];
-    }
-    if (curPage + 2 >= pagLength) {
-      paginationIndexes = [
-        1,
-        0,
-        pagLength - 4,
-        pagLength - 3,
-        pagLength - 2,
-        pagLength - 1,
-        pagLength,
-      ];
-    }
-    if (curPage >= 4 && curPage + 2 < pagLength) {
-      paginationIndexes = [
-        1,
-        0,
-        curPage - 1,
-        curPage,
-        curPage + 1,
-        0,
-        pagLength,
-      ];
-    }
-    return paginationIndexes.map((page) => {
+    return paginationIndexes.map((page, i) => {
       if (!page) {
         return <Dots />;
       }
       return (
         <PaginationItem
+          // key={`${page}${i}`}
           onPageClick={onPageNumberClick}
           number={page}
           isActive={page === curPage}
         />
       );
     });
-  }, [pagLength, curPage]);
+  }, [curPage, onPageNumberClick, paginationIndexes]);
 
   return (
     <div className="pagination__wrapper">
@@ -99,6 +82,7 @@ const Pagination = ({ total, currentPage = 1 }) => {
           </button>
         </li>
       </ul>
+      {children}
     </div>
   );
 };

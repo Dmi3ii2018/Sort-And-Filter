@@ -27,10 +27,11 @@ const inputStyle = {
 
 const FilterIcon = ({ filterHandler, colName }) => {
   const [isFilterVisible, setFilter] = useState(false);
-  const [filterValue, setFilterValue] = useState('')
+  const [filterValue, setFilterValue] = useState('');
   const inputEl = useRef();
   const filterEl = useRef();
-  const debaunceValue = useDebounce(filterValue, 100); 
+  const debaunceValue = useDebounce(filterValue, 100);
+
   useEffect(() => {
     if (isFilterVisible) {
       inputEl.current.focus();

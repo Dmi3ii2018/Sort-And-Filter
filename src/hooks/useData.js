@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const URL = "http://zar.hosthot.ru/api/v1/pokemons/?limit=10&offset=10.";
+const URL = "http://zar.hosthot.ru/api/v1/pokemons/?";
 
-const usePokemonApi = () => {
+const usePokemonApi = (limit = 10, offset = 10) => {
   const [data, setData] = useState({ pokemons: [] });
-
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [url, setUrl] = useState(`${URL}limit=${limit}&offset=${offset}`)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,7 +15,7 @@ const usePokemonApi = () => {
       setIsLoading(true);
 
       try {
-        const result = await axios(URL);
+        const result = await axios(url);
 
         setData(result.data);
       } catch (error) {
@@ -26,14 +26,17 @@ const usePokemonApi = () => {
     };
 
     fetchData();
-  }, []);
+  }, [url]);
+
+  useEffect(() => {
+    setUrl(`${URL}limit=${limit}&offset=${offset}`)
+  }, [limit, offset])
 
   return [data, isLoading, isError];
 };
 
-export const useData = () => {
-  const [data, isLoading, isError] = usePokemonApi();
-  console.log("data", data)
+export const useData = (limit, offset) => {
+  const [data, isLoading, isError] = usePokemonApi(limit, offset);
   const [updatedData, setUpdatedData] = useState();
 
   useEffect(() => {

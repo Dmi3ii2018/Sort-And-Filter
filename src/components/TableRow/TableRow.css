@@ -1,0 +1,8 @@
+.pokemon-image {
+    transform: scale(1);
+    transition: all 200ms linear;
+}
+
+.pokemon-image:hover {
+    transform: scale(2);
+}

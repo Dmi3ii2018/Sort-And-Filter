@@ -202,33 +202,13 @@ progress, sub, sup {
   }
   
   .pagination__wrapper {
-    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 17%, white 83%, rgba(255, 255, 255, 0) 100%);
+    display: flex;
+    align-items: center;
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, white 17%, white 83%, rgba(255, 255, 255, 0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 );
     height: 50px;
-    left: 50%;
-    position: absolute;
     text-align: center;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    bottom: -100px;
     width: 700px;
-  }
-  .pagination__wrapper:before, .pagination__wrapper:after {
-    background: -webkit-linear-gradient(left, transparent 0%, rgba(0, 0, 0, 0.1) 17%, rgba(0, 0, 0, 0.1) 83%, transparent 100%);
-    background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.1) 17%, rgba(0, 0, 0, 0.1) 83%, transparent 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#00000000',GradientType=1 );
-    content: "";
-    height: 1px;
-    left: 0;
-    position: absolute;
-    width: 100%;
-  }
-  .pagination__wrapper:before {
-    top: -1px;
-  }
-  .pagination__wrapper:after {
-    bottom: -1px;
   }
   
   @-webkit-keyframes hoverAnimation {
